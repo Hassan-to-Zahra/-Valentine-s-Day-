@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Happy Valentine’s Day✨</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d0118;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+        }
+
+        section {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .heart-icon {
+            font-size: 60px;
+            color: #ff3366;
+            animation: pulse 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            background: linear-gradient(to right, #ff99cc, #ff3366);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #7b2ff7, #f107a3);
+            border: none;
+            padding: 12px 30px;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 25px;
+            box-shadow: 0 5px 15px rgba(123, 47, 247, 0.4);
+        }
+
+        .letter-card {
+            background: ;
+            color: #333;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: left;
+        }
+
+        .photo-box img {
+            width: 40%;
+            max-width: 150px;
+            border-radius: 15px;
+            margin: 15px auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- STEP 1 -->
+    <section id="step1">
+        <div class="heart-icon">💌</div>
+        <h1> Happy Valentine’s Day</h1>
+        <p>
+            Not every feeling needs a label.<br>
+            Some feelings just exist quietly.
+        </p>
+        <button class="btn" onclick="nextStep('step2')">Continue ✨</button>
+    </section>
+
+    <!-- STEP 2 -->
+    <section id="step2" class="hidden">
+        <div style="font-size:60px;">🌹</div>
+        <h1>For You</h1>
+        <p>
+            This day reminded me of something I’ve always known.
+        </p>
+        <button class="btn" onclick="nextStep('step3')">Read Carefully 🤍</button>
+    </section>
+
+    <!-- STEP 3 -->
+    <section id="step3" class="hidden">
+        <div class="letter-card">
+            <h3 style="text-align:center;color:#f107a3;">A Quiet Truth</h3>
+            <p>
+                Some feelings are never meant to be spoken loudly.<br><br>
+
+                I just want you to know that your presence has a value in my life
+                that goes beyond words. You inspire calm, respect, and sincerity
+                in me. Being around you — even from a distance — has taught me
+                patience, growth, and understanding.<br><br>
+
+                This isn’t a confession or an expectation.
+                It’s simply an honest acknowledgment of what you represent
+                in my world — something meaningful, something pure.
+            </p>
+
+            <div style="text-align:center;">
+                <button class="btn" onclick="nextStep('step4')">One Last Thing 🌸</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section id="step4" class="hidden">
+        <div class="photo-box">
+            <h2 style="color:#f107a3;">A Gentle Reminder</h2>
+
+            <!-- replace with your image -->
+            <img src="photo.jpg">
+
+            <p>
+                You may never realize it,
+                but some people quietly become a part of someone’s strength.
+                This is just my way of wishing you
+                a peaceful and beautiful Valentine’s Day.
+            </p>
+
+            <button class="btn" onclick="location.reload()">Start Again 🔄</button>
+        </div>
+    </section>
+
+</div>
+
+<script>
+function nextStep(stepId) {
+    document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
+    document.getElementById(stepId).classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
